@@ -83,20 +83,7 @@ export const navLists =
                     },
                   ],
                 },
-                {
-                  label: "其他文档",
-                  chindren: [
-                    {
-                      label: "arthas文档",
-                      value: "https://arthas.aliyun.com/doc/watch.html",
-                    },
-                    {
-                      label: "车源服务文档",
-                      value:
-                        "https://cars-api.guazi-cloud.com/#/doc/internal/%E8%BD%A6%E6%BA%90%E6%9C%8D%E5%8A%A1/%E8%BD%A6%E6%BA%90%E7%BB%9F%E4%B8%80%E8%A1%A8%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E",
-                    },
-                  ],
-                },
+                
                 {
                   label: "服务监控",
                   chindren: [
@@ -290,6 +277,20 @@ export const navLists =
                     {
                       label: "营销平台管理系统",
                       value: "https://pangu.guazi-cloud.com/mkt/tplLists/createTpl",
+                    },
+                  ],
+                },
+                {
+                  label: "其他文档",
+                  chindren: [
+                    {
+                      label: "arthas文档",
+                      value: "https://arthas.aliyun.com/doc/watch.html",
+                    },
+                    {
+                      label: "车源服务文档",
+                      value:
+                        "https://cars-api.guazi-cloud.com/#/doc/internal/%E8%BD%A6%E6%BA%90%E6%9C%8D%E5%8A%A1/%E8%BD%A6%E6%BA%90%E7%BB%9F%E4%B8%80%E8%A1%A8%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E",
                     },
                   ],
                 },
