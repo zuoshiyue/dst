@@ -86,30 +86,44 @@ const needSpaceStyle = ref({
 let lastNavName = navLists.at(-1)?.chindren.at(-1)?.label
 
 onMounted(() => {
+    // 获取最后一个导航卡片的clientHeight，用于计算所需的高度
     let lastClientHeight = document.getElementsByName(`${lastNavName}-card`)[0]
         .clientHeight
+    // 计算页面剩余空间的高度，减去40是为了调整间距或布局的其他部分
     let needSpaceHeight = window.innerHeight - lastClientHeight - 40
+    // 动态设置needSpaceStyle的height属性，以适应不同的窗口大小和布局需求
     needSpaceStyle.value.height = `${needSpaceHeight}px`
 })
 
 const isViewBackTopButton = ref(false)
 
+/**
+ * 返回顶部按钮点击事件处理函数
+ * 该函数将滚动条滚动到页面顶部
+ */
 const backTopClicked = () => {
-    // 返回顶部
     scrollbarRef.value!.setScrollTop(0)
 }
 
+/**
+ * 打开搜索引擎结果页面
+ * 根据用户选择的搜索引擎类型和输入的搜索内容，定向到对应的搜索结果页面
+ */
 const buttonSearch = () => {
+    // 根据用户选择的搜索引擎类型，执行不同的搜索操作
     switch (selectSearch.value) {
         case 'bing':
+            // 当用户选择必应搜索时，构造必应搜索结果页面的URL并打开
             window.open(`https://cn.bing.com/search?q=${inputSearch.value}`)
             break
         case 'baidu':
+            // 当用户选择百度搜索时，构造百度搜索结果页面的URL并打开
             window.open(`https://www.baidu.com/s?wd=${inputSearch.value}`)
             break
-        
+        // 可以在此处添加更多的搜索引擎案例
 
         default:
+            // 如果用户未选择任何搜索引擎或选择了未知的搜索引擎，不做任何操作
             break
     }
 }
@@ -122,23 +136,47 @@ const activeIndex = ref('')
 
 const openeds = ref(['通用', '工具', '娱乐'])
 
+/**
+ * 处理选项卡选择的函数
+ * 
+ * 该函数的目标是根据所选选项卡的key滚动到对应的位置
+ * 它通过计算目标选项卡的顶部偏移量来设置滚动条的位置
+ * 
+ * @param key 当前选项卡的唯一标识符
+ * @param keyPath 当前选项卡的路径，表示一系列的key
+ */
 const handleSelect = (key: string, keyPath: string[]) => {
+    // 获取目标选项卡的顶部偏移量
     let offsetTop = document.getElementsByName(key)[0].offsetTop
+    // 设置滚动条的顶部位置，以滚动到目标选项卡
     scrollbarRef.value!.setScrollTop(offsetTop - 20)
 }
+/**
+ * 当导航选择项被点击时执行的函数
+ * 该函数接收一个URL字符串作为参数，并在新的浏览器窗口中打开该URL
+ * 
+ * @param {string} href - 导航项的URL地址
+ */
 const navSelectClicked = (href: string) => {
     window.open(href)
 }
+/**
+ * 处理滚动事件的函数
+ * @param {Object} event - 滚动事件对象
+ * @param {number} event.scrollTop - 滚动的垂直位置
+ */
 const scroll = ({ scrollTop }: any) => {
+    // 当滚动超过300时，设置回到顶部的按钮可见
     if (scrollTop >= 300) {
         isViewBackTopButton.value = true
     }
+
+    // 根据滚动位置动态更新回到顶部按钮的可见性
     isViewBackTopButton.value = scrollTop >= 500 ? true : false
 
+    // 计算特定元素的偏移量，此处的数字代表特定元素的高度和页面顶部的距离
     // 937 - 247
     let offsetTop = document.getElementsByName('老版项目维护-card')
-
-
 }
 </script>
 <style scoped>
