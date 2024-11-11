@@ -101,49 +101,26 @@ const backTopClicked = () => {
 
 const buttonSearch = () => {
     switch (selectSearch.value) {
-        case 'dev':
-            window.open(
-                `https://kaifa.baidu.com/searchPage?wd=${inputSearch.value}&module=SEARCH`
-            )
+        case 'bing':
+            window.open(`https://cn.bing.com/search?q=${inputSearch.value}`)
             break
         case 'baidu':
             window.open(`https://www.baidu.com/s?wd=${inputSearch.value}`)
             break
-        case 'bing':
-            window.open(`https://cn.bing.com/search?q=${inputSearch.value}`)
-            break
+        
 
         default:
             break
     }
 }
 
-// const navLists = ref<any>(navLists)
-
-// 导航标题坐标集合
-// let offsetTopList = ref<any>({})
-
-// navLists.value.forEach((item: any) => {
-//     item.chindren.forEach((nav: any) => {
-//         offsetTopList.value[nav.label] = 0
-//     });
-// })
-
 onMounted(() => {
-    // 会触发12次，需要优化
-    // for (const key in offsetTopList.value) {
-    //     if (Object.prototype.hasOwnProperty.call(offsetTopList.value, key)) {
-    //         let offsetTop = document.getElementsByName(key)[0].offsetTop
-    //         scrollbarRef.value!.setScrollTop(offsetTop - 20)
-    //         offsetTopList.value[key] = offsetTop
-    //     }
-    // }
-    //
+   
 })
 
 const activeIndex = ref('')
 
-const openeds = ref(['通用', '项目'])
+const openeds = ref(['通用', '工具', '娱乐'])
 
 const handleSelect = (key: string, keyPath: string[]) => {
     let offsetTop = document.getElementsByName(key)[0].offsetTop
@@ -157,23 +134,11 @@ const scroll = ({ scrollTop }: any) => {
         isViewBackTopButton.value = true
     }
     isViewBackTopButton.value = scrollTop >= 500 ? true : false
-    // window.innerHeight
 
-    //
     // 937 - 247
     let offsetTop = document.getElementsByName('老版项目维护-card')
 
-    // if (scrollTop >= (210 - 20)) {
-    //     activeIndex.value = '常用站点'
-    // }
-    // for (const key in offsetTopList.value) {
-    //
-    //
-    //     if (scrollTop == offsetTopList.value[key]) {
-    //
-    //         activeIndex.value = key
-    //     }
-    // }
+
 }
 </script>
 <style scoped>
