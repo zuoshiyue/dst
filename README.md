@@ -24,7 +24,8 @@ npm run deploy
 ## 配置设置
 `vite.config.ts` 中的`base` 根据实际项目地址配置
 
-具体内容可看博文[《静态导航页设计与开发》](https://dstweihao.cn/?p=185 )
+具体内容可看博文  
+[《静态导航页设计与开发》](https://dstweihao.cn/?p=185 )  
 [npmjs - gh-pages](https://www.npmjs.com/package/gh-pages)
 
 
