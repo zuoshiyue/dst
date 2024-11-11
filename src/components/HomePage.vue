@@ -20,14 +20,13 @@
             <el-scrollbar class="home-page-list" ref="scrollbarRef" @scroll="scroll">
                 <div class="home-page-list-search">
                     <el-image style="width: 50px; height: 50px" :src="LogoUrl" />
-                    <span class="home-page-departmenet">DSTWEIHAO</span>
+                    <span class="home-page-departmenet">ZUOSHIYUE</span>
                 </div>
                 <el-input v-model="inputSearch" placeholder="不懂就搜，一搜就懂" class="home-page-list-search-input">
                     <template #prepend>
                         <el-select v-model="selectSearch" placeholder="Select" style="width: 120px;">
-                            <el-option label="开发者搜索" value="dev" />
-                            <el-option label="百度" value="baidu" />
                             <el-option label="必应" value="bing" />
+                            <el-option label="百度" value="baidu" />
                         </el-select>
                     </template>
                     <template #append>
