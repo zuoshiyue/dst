@@ -278,6 +278,10 @@ export const navLists =
                       label: "营销平台管理系统",
                       value: "https://pangu.guazi-cloud.com/mkt/tplLists/createTpl",
                     },
+                    {
+                      label: "费用明细后台",
+                      value: "https://order-mg.guazi-corp.com/#/order/orderDetail?orderId=2024110219493141800094",
+                    },
                   ],
                 },
                 {
