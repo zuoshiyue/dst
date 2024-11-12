@@ -18,6 +18,10 @@ export const navLists =
                       label: "瓜子邮箱",
                       value: "https://mail.guazi.com/",
                     },
+                    {
+                      label: "GitHub",
+                      value: "https://github.com/zuoshiyue",
+                    },
                   ],
                 },
                 {
